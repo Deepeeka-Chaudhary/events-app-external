@@ -45,11 +45,13 @@ app.get('/', (req, res) => {
     // using an environment variable. Here, the variable is passed 
     // to npm start inside package.json:
     //  "start": "SERVER=http://localhost:8082 node server.js",
+
     request.get(  // first argument: url + return format
         {
             url: SERVER + '/events',  // the microservice end point for events
             json: true  // response from server will be json format
         }, // second argument: function with three args,
+        
         // runs when server response received
         // body hold the return from the server
         (error, response, body) => {
